@@ -1,6 +1,6 @@
 <?php
 class GetEnv{
-    public static function getDbEnv(){
+    public static function getEnv(){
         $filePath = __DIR__.'/.env';
         if(!file_exists($filePath)){
             echo $filePath;

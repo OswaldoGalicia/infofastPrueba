@@ -1,3 +1,17 @@
+<?php
+    include_once __DIR__ . "/env/GetEnv.php";
+    
+    try{
+        GetEnv::getEnv();
+    }catch(Exception $e){
+        echo '
+            <script>
+                alert("'.$e -> getMessage().' | '.$e -> getCode() .'");
+            </script>
+        ';
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +21,7 @@
 </head>
 <body>
     <?php 
-
+    
     ?>
 </body>
 </html>
