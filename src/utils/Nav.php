@@ -15,8 +15,8 @@
     </a>
 
     <ul class="navLinks">
-        <li><a class="navLink" href="#">Prueba tecnica</a></li>
-        <li><a class="navLink" href="#">Testdome (Screenshots)</a></li>
-        <li><a class="navLink" href="#">Prueba FizzBuzz</a></li>
+        <li><a class="navLink" href="#pruebaTecnica">Prueba tecnica</a></li>
+        <li><a class="navLink" href="#Examenes">Testdome (Screenshots)</a></li>
+        <li><a class="navLink" href="#fizzBuzz">Prueba FizzBuzz</a></li>
     </ul>
 </nav>

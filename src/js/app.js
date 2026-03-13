@@ -166,6 +166,7 @@ function enviarCompra(cliente, fecha, hora){
         return;
     }
     alert("Compra guardada");
+    location.reload();
     });
 
 }

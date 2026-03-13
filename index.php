@@ -28,7 +28,7 @@
         include_once __DIR__ . "/src/utils/Nav.php";
     ?>
     <div class="container">
-        <form action="" class="form">
+        <form action="" class="form" id="pruebaTecnica">
             <?php 
                 try{
                     include_once __DIR__ . "/src/components/UserData.php"; 
@@ -55,7 +55,7 @@
     </div>
     <div class="separador"></div>
     <div class="container">
-        <h2>Imágenes de Exámenes</h2>
+        <h2 id="Examenes">Imágenes de Exámenes</h2>
         <div class="examenes">
             <img src="./src/img/exam1.jpg" alt="ImgDeExamenes" class="examImg">
             <img src="./src/img/exam2.jpg" alt="ImgDeExamenes" class="examImg">
@@ -76,7 +76,7 @@
     <div class="separador"></div>
 
     <div class="FizzBuzz container">
-        <h2>FizzBuzz</h2>
+        <h2 id="fizzBuzz">FizzBuzz</h2>
         <p>El codigo se encuentra directo en esta sección (en js con el inspector) y el resultado en la consola. :D</p>
         <script>
             for(let i = 1; i<=100 ; i++){
