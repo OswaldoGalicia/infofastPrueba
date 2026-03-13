@@ -26,38 +26,33 @@
 <body>
     <?php 
         include_once __DIR__ . "/src/utils/Nav.php";
-
-        
-
-        //agregar los clientes y productos separados en tarjetas Seccion de imagenes de las pruebas, bd y mensajes de errores o confirmaciones
-        
-        $credentials = ["user" => getenv("CREDENTIALS_USER"), "pwd" => getenv("CREDENTIALS_PWD")];
-        $url = getenv("URL_PRODUCTOS");
-
-        $curl = curl_init($url);
-
-        curl_setopt($curl, CURLOPT_POST, true);
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($credentials));
-        curl_setopt($curl, CURLOPT_HTTPHEADER, ['Content-Type: application/x-www-form-urlencoded']);
-        $response = curl_exec($curl);
-
-
     ?>
-    <form action="">
-        <?php 
-            try{
-                include_once __DIR__ . "/src/components/UserData.php"; 
-            }catch(Exception $e){
-                echo '
-                    <script>
-                        alert("'.$e -> getMessage().' | '.$e -> getCode() .'");
-                    </script>
-                ';
-            }
-            
-        ?>
+    <div class="container">
+        <form action="" class="form">
+            <?php 
+                try{
+                    include_once __DIR__ . "/src/components/UserData.php"; 
+                    
+            ?>
+            <div class="seccionProductosResumen">
+                
+                <?php include_once __DIR__ . "/src/components/Products.php"; ?>
+                
+                <?php include_once __DIR__ . "/src/components/Cart.php"; ?>
+                
+            </div>
+            <?php
+                }catch(Exception $e){
+                    echo '
+                        <script>
+                            alert("'.$e -> getMessage().' | '.$e -> getCode() .'");
+                        </script>
+                    ';
+                }
+            ?>
 
-    </form>
+        </form>
+    </div>
+    <script src="/src/js/app.js"></script>
 </body>
 </html>

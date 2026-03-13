@@ -1,20 +1,20 @@
 <?php
 
     $credentials = ["user" => getenv("CREDENTIALS_USER"), "pwd" => getenv("CREDENTIALS_PWD")];
-        $url = getenv("URL_CLIENTES");
+    $url = getenv("URL_CLIENTES");
 
-        $curl = curl_init($url);
+    $curl = curl_init($url);
 
-        curl_setopt($curl, CURLOPT_POST, true);
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($credentials));
-        curl_setopt($curl, CURLOPT_HTTPHEADER, ['Content-Type: application/x-www-form-urlencoded']);
-        $response = curl_exec($curl);
-        $clientes = json_decode($response, true);
-        if(empty($clientes)){throw new Exception("Hubo un problema al consultar los clientes", 500);}
+    curl_setopt($curl, CURLOPT_POST, true);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($credentials));
+    curl_setopt($curl, CURLOPT_HTTPHEADER, ['Content-Type: application/x-www-form-urlencoded']);
+    $response = curl_exec($curl);
+    $clientes = json_decode($response, true);
+    if(empty($clientes)){throw new Exception("Hubo un problema al consultar los clientes", 500);}
 ?>
 
-<div class="container userData">
+<div class=" userData">
     <div class="field">
         <label for="cliente">Cliente: </label>
         <select id="cliente" name="cliente" type="text">

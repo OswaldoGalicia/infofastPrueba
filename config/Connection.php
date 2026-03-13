@@ -1,5 +1,6 @@
 <?php
-
+include_once __DIR__ . "/../env/GetEnv.php";
+GetEnv::getEnv();
 class Connection{
     private $user;
     private $pwd;
@@ -24,7 +25,7 @@ class Connection{
             try{
                 $conn = new PDO($this -> dbc, $this -> user, $this -> pwd, $this -> opt);
             }catch(PDOException $e){
-                throw new Exception("Error en la conexion con el servidor. (80)", 500);
+                throw new Exception("Error en la conexion con el servidor. (80)" . $e . "  |  ". $this -> dbc, 500);
             }
             return $conn;
         }
